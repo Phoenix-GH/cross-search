@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "dateRangeType": {
+      "enum": [
+        "predefined",
+        "range"
+      ]
+    },
+    "predefined": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 731,
+      "$comment": "This field required when 'dateRangeType'='predefined' only. The field contains number of days to subtract from current date in order to calculate a date range which has to be used for search. Allowed values: 0, 1, 7, 14, 31, 62, 93, 186, 366, 731. Where 0 means - All years"
+    },
+    "fromDay": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 31,
+      "$comment": "This field required when 'dateRangeType'='range' only."
+    },
+    "fromMonth": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 11,
+      "$comment": "This field required when 'dateRangeType'='range' only."
+    },
+    "fromYear": {
+      "type": "integer",
+      "minimum": 1773,
+      "$comment": "This field required when 'dateRangeType'='range' only."
+    },
+    "toDay": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 31,
+      "$comment": "This field required when 'dateRangeType'='range' only."
+    },
+    "toMonth": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 11,
+      "$comment": "This field required when 'dateRangeType'='range' only."
+    },
+    "toYear": {
+      "type": "integer",
+      "minimum": 1773,
+      "$comment": "This field required when 'dateRangeType'='range' only."
+    },
+    "term": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "This is a search query."
+    }
+  },
+  "required": [],
+  "title": "search query",
+  "description": "JSON Search query API scheme"
+}

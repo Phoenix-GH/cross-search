@@ -1,0 +1,17 @@
+@import '../color-palette'
+
+for name, color in colors
+  .u-color--{name}
+    color color
+  .u-color--{name}-important
+    color color !important
+
+  .u-bgc--{name}
+    background-color color
+  .u-bgc--{name}-important
+    background-color color !important
+
+  .u-bc--{name}
+    border-color color
+  .u-bc--{name}-important
+    border-color color !important
